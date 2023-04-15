@@ -259,12 +259,10 @@ class Transaction:
         
         # Commit the changes to the database
         self.conn.commit()
-        
-        # Reset the item list
-        self.reset_transaction()
             
         print(f"Total Price Before Discount: {total_price_before_discount}")
         print(f"Total Discount: {total_discount}")
         print(f"Total Price: {total_price}")
 
-
+        # Reset the item list
+        self.reset_transaction()
