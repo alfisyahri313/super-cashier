@@ -46,4 +46,9 @@ Test Can be seen in testing.ipynb
 Final Output
 ![Alt text](/database-table2.png "Database SQLite")
 
+### Conclusion
+* Super cashier is a program to enable customer input their purchases and check out the items by them self.
+* With this program a lot of process can be done by customer them self. It will speed up transaction and reduce queue
 
+### Future Work
+* Add GUI for customer and Deploy the program as web app
