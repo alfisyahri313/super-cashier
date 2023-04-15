@@ -20,7 +20,7 @@
 * Create a process for checkout
 
 ## Alur Program
-![Alt text](relative%20path/flowchart.png?raw=true "Title")
+![Alt text](/flowchart.png "Flow Chart")
 
 
 
