@@ -42,7 +42,7 @@ All Function below is in the Transaction class in the main.py file:
 Insert the current transaction to database. Delete the current item_list.
 
 ### Test and Output
-* Test Can be seen in testing.ipynb
+* Test can be seen in testing.ipynb
 * Final Output
 ![Alt text](/database-table2.png "Database SQLite")
 
