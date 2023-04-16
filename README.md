@@ -39,11 +39,16 @@ All Function below is in the Transaction class in the main.py file:
     * if total price of a set of item of same item_name is above 200.000 then the discount is 5%.
     * if total price of a set of item of same item_name is above 300.000 then the discount is 6%.
     * if total price of a set of item of same item_name is above 500.000 then the discount is 7%.
-Insert the current transaction to database. Delete the current item_list.
+Insert the current transaction to database. Then, Delete the current item_list.
+
+### GUI
+Graphical user Interface (GUI) of the program contains action can be done by user using the super-cashier program.
+![Alt text](/gui.png "GUI")
 
 ### Test and Output
-* Test can be seen in testing.ipynb
+* Detail test can be seen in testing.ipynb
 * Final Output
+
 ![Alt text](/database-table2.png "Database SQLite")
 
 ### Conclusion
@@ -51,4 +56,4 @@ Insert the current transaction to database. Delete the current item_list.
 * With this program a lot of process can be done by customer them self. It will speed up transaction and reduce queue
 
 ### Future Work
-* Add GUI for customer and Deploy the program as web app
+* Better GUI as a web app which can be run in website

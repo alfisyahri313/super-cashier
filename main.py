@@ -232,9 +232,10 @@ class Transaction:
         """
         self.conn = sqlite3.connect('transactions.db')
         c = self.conn.cursor()
-        total_price = 0
         total_price_before_discount = 0
         total_discount = 0
+        total_price = 0
+        item_list_check_out = []
         for item in self.item_list:
             item_price = item["total_price_before_discount"]
             total_price_before_discount += item_price
@@ -249,7 +250,16 @@ class Transaction:
             discounted_price = item_price - discount
             total_price += discounted_price
             total_discount += discount
-            print(f"{item['item_name']}: {item['quantity']} x {item['price']} = {discounted_price}")
+            item_list_check_out.append({
+                "item_name" : item["item_name"],
+                "quantity" : item["quantity"],
+                "price" : item["price"],
+                "discount" : discount,
+                "total_price_before_discount" : item["total_price_before_discount"],
+                "total_price" : discounted_price
+            })
+            
+            # print(f"{item['item_name']}: {item['quantity']} x {item['price']} = {discounted_price}")
             
             # Insert the transaction item into the transaction_item table
             c.execute("""
@@ -259,10 +269,14 @@ class Transaction:
         
         # Commit the changes to the database
         self.conn.commit()
-            
-        print(f"Total Price Before Discount: {total_price_before_discount}")
-        print(f"Total Discount: {total_discount}")
-        print(f"Total Price: {total_price}")
+        if len(item_list_check_out) == 0:
+            self.reset_transaction()
+        else:
+            df = pd.DataFrame(item_list_check_out)
+            print(df)
+            print(f"Total Price Before Discount: {total_price_before_discount}")
+            print(f"Total Discount: {total_discount}")
+            print(f"Total Price: {total_price}")
 
-        # Reset the item list
-        self.reset_transaction()
+            # Reset the item list
+            self.reset_transaction()
