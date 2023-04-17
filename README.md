@@ -39,6 +39,7 @@ All Function below is in the Transaction class in the main.py file:
     * if total price of a set of item of same item_name is above 200.000 then the discount is 5%.
     * if total price of a set of item of same item_name is above 300.000 then the discount is 6%.
     * if total price of a set of item of same item_name is above 500.000 then the discount is 7%.
+
 Insert the current transaction to database. Then, Delete the current item_list.
 
 ### GUI
